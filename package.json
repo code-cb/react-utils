@@ -1,0 +1,34 @@
+{
+  "name": "@codecb/react-utils",
+  "version": "0.0.1",
+  "description": "Useful hooks, components and utils for React",
+  "repository": "https://github.com/code-cb/react-utils",
+  "author": "ICodeMyOwnLife",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.es.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "rollup --config scripts/build.ts --configPlugin typescript --watch",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/node": "^16.11.12",
+    "@types/react": "^17.0.37",
+    "prettier": "^2.5.1",
+    "rollup": "^2.60.2",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-filesize": "^9.1.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  }
+}
