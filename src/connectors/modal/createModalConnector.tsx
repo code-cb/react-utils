@@ -7,7 +7,7 @@ const useModalContext = () =>
   useRequiredContext(ModalContext, 'useModal or useShowModal', 'ModalProvider');
 
 const createUseModal =
-  <TPayload extends unknown>(key: ModalKey) =>
+  <TPayload,>(key: ModalKey) =>
   () => {
     const { getState, setState, subscribe } = useModalContext();
     const forceUpdate = useForceUpdate();
@@ -27,6 +27,7 @@ const createUseModal =
     };
   };
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
 export const createModalConnector = <TPayload extends unknown = void>(
   key: ModalKey,
 ) => ({

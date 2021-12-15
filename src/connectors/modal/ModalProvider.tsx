@@ -47,7 +47,7 @@ const ModalProviderComponent: FC<ModalProviderProps> = ({ children }) => {
         if (subscribers.size === 0) deleteState(key);
       };
     },
-    [],
+    [deleteState],
   );
   const value = useMemo<ModalContext>(
     () => ({ deleteState, getState, setState, subscribe }),

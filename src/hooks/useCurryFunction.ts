@@ -90,5 +90,6 @@ export const useCurryFunction: UseCurryFunction = (
 ) =>
   useCallback(
     (...restArgs: unknown[]) => fn.apply(thisArg, [...args, ...restArgs]),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [fn, ...args],
   );

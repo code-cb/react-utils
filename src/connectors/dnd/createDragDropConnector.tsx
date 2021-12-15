@@ -10,7 +10,7 @@ import { memo } from 'hocs';
 import { useRequiredContext } from 'hooks';
 import { DragDropContext } from './DragDropContext';
 
-export const createDragDropConnector = <TData extends unknown>() => {
+export const createDragDropConnector = <TData,>() => {
   const Context = DragDropContext<TData>();
 
   const DragDropProviderComponent = ({ children }: DragDropProviderProps) => {
@@ -77,7 +77,7 @@ export const createDragDropConnector = <TData extends unknown>() => {
           dragImageRef.current = dragImage;
         }
       },
-      [data, setDragData],
+      [data, getDragImageStyle, setDragData],
     );
     return { handleDragEnd, handleDragStart, isDragging };
   };
